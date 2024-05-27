@@ -9,7 +9,8 @@ def transformChaine(ligne):
     newLine = ligne
 
     for i in range(0, len(liste)):
-        newLine.replace(liste[i], listeEntier[i])
+        if liste[i] in newLine:
+            newLine = newLine.replace(str(liste[i]), str(listeEntier[i]))
 
     return newLine
 
@@ -37,7 +38,6 @@ def j1():
             for i in transformChaine(line):
                 if i.isdigit():
                     chaine += i
-
             total += int(chaine[0] + chaine[-1])
         
         print(f"Réponse jour 1 partie 2 : {total}")
