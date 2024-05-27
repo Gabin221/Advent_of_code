@@ -12,9 +12,8 @@ def j1():
     def partie1():
         total = 0
         for line in input:
-            line = re.sub('\D', '', line)
-            nums = int(line[0] + line[-1])
-            total += nums
+            print(line)
+
         print(f"Réponse jour 1 partie 1 : {total}")
     
     def partie2():
@@ -44,6 +43,6 @@ def j1():
         print(f"Réponse jour 1 partie 2 : {sum(pairs)}")
     
     partie1()
-    partie2()
+    # partie2()
 
 j1()
