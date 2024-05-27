@@ -3,6 +3,39 @@ import sys
 
 # sys.setrecursionlimit(999999)
 
+def premierNbr(ligne):
+    liste = ["1", "one", "2", "two", "3", "three", "4", "four", "5", "five", "6", "six", "7", "seven", "8", "eight", "9", "nine"]
+    positions = []
+
+    for i in liste:
+        if i in ligne:
+            positions.append(liste.index(i))
+        else:
+            positions.append(19)
+
+    premier = int([i for i in positions if i != 19][0])
+    if premier%2 == 0:
+        return liste[premier]
+    else:
+        return liste[premier-1]
+
+def dernierNbr(ligne):
+    liste = ["1", "one", "2", "two", "3", "three", "4", "four", "5", "five", "6", "six", "7", "seven", "8", "eight", "9", "nine"]
+    positions = []
+
+    for i in liste:
+        if i in ligne:
+            positions.append(liste.index(i))
+        else:
+            positions.append(19)
+
+    dernier = int([i for i in positions if i != 19][-1])
+    if dernier%2 == 0:
+        return liste[dernier]
+    else:
+        return liste[dernier-1]
+
+
 def j1():
     filename = "../Input/inputj1.txt"
     input = []
@@ -21,32 +54,14 @@ def j1():
         print(f"Réponse jour 1 partie 1 : {total}")
     
     def partie2():
-        values = {
-            "one": "1", 
-            "two": "2", 
-            "three": "3", 
-            "four": "4", 
-            "five": "5", 
-            "six": "6", 
-            "seven": "7", 
-            "eight": "8", 
-            "nine": "9"
-            }
-        pairs = []
+        total = 0
         for line in input:
-            digits = []
-            for i,c in enumerate(line):
-                if line[i].isdigit():
-                    digits.append(line[i])
-                else:
-                    for k in values.keys():
-                        if line[i:].startswith(k):
-                            digits.append(values[k])
-            pairs.append(int(f"{digits[0]}{digits[-1]}"))
+            total += int(premierNbr(line) + dernierNbr(line))
+            print(f"{line}: {int(premierNbr(line) + dernierNbr(line))}")
         
-        print(f"Réponse jour 1 partie 2 : {sum(pairs)}")
+        print(f"Réponse jour 1 partie 2 : {total}")
     
-    partie1()
-    # partie2()
+    # partie1()
+    partie2()
 
 j1()
