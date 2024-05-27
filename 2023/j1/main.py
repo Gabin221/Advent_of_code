@@ -1,7 +1,7 @@
 import re
 import sys
 
-sys.setrecursionlimit(999999)
+# sys.setrecursionlimit(999999)
 
 def j1():
     filename = "../Input/inputj1.txt"
@@ -12,7 +12,11 @@ def j1():
     def partie1():
         total = 0
         for line in input:
-            print(line)
+            chaine = ""
+            for i in line:
+                if i.isdigit():
+                    chaine += i
+            total += int(chaine[0] + chaine[-1])
 
         print(f"Réponse jour 1 partie 1 : {total}")
     
