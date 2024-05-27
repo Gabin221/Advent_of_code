@@ -5,19 +5,17 @@ import sys
 
 def premierNbr(ligne):
     liste = ["1", "one", "2", "two", "3", "three", "4", "four", "5", "five", "6", "six", "7", "seven", "8", "eight", "9", "nine"]
-    positions = []
+    premier = ""
 
-    for i in liste:
-        if i in ligne:
-            positions.append(liste.index(i))
-        else:
-            positions.append(19)
+    for i in range(0, len(liste)):
+        if liste[i] in ligne:
+            if i%2 == 0:
+                premier += liste[i]
+            else:
+                premier += liste[i - 1]
+            break
+    return premier
 
-    premier = int([i for i in positions if i != 19][0])
-    if premier%2 == 0:
-        return liste[premier]
-    else:
-        return liste[premier-1]
 
 def dernierNbr(ligne):
     liste = ["1", "one", "2", "two", "3", "three", "4", "four", "5", "five", "6", "six", "7", "seven", "8", "eight", "9", "nine"]
