@@ -4,13 +4,21 @@ import sys
 # sys.setrecursionlimit(999999)
 
 def transformChaine(ligne):
-    listeEntier = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    liste = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    listeEntiers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    listeLettres = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    liste = ["1", "one", "2", "two", "3", "three", "4", "four", "5", "five", "6", "six", "7", "seven", "8", "eight", "9", "nine"]
+    positions = []
     newLine = ligne
 
     for i in range(0, len(liste)):
         if liste[i] in newLine:
-            newLine = newLine.replace(str(liste[i]), str(listeEntier[i]))
+            positions.append(newLine.find(liste[i]))
+        else:
+            positions.append(None)
+    
+    print(f"{newLine}:\n{positions}")
+
+    # newLine = newLine.replace()
 
     return newLine
 
