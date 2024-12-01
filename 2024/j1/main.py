@@ -10,6 +10,7 @@ for ligne in lignes:
 	liste_gauche.append(nombres[0])
 	liste_droite.append(nombres[1])
 
+
 def partie1():
 	dist_totale = 0
 
@@ -34,7 +35,6 @@ def partie2():
 		score += frequence * int(i)
 
 	print(f"La réponse de la partie 2 est {score}")
-
 
 
 if __name__ == "__main__":
