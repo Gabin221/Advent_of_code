@@ -2,16 +2,16 @@ with open("../Input/j1.txt","r",encoding="utf8") as file :
     lignes = [line.strip() for line in file.readlines()]
 
 
+liste_gauche = []
+liste_droite = []
+
+for ligne in lignes:
+	nombres = ligne.split("   ")
+	liste_gauche.append(nombres[0])
+	liste_droite.append(nombres[1])
+
 def partie1():
-	liste_gauche = []
-	liste_droite = []
-
 	dist_totale = 0
-
-	for ligne in lignes:
-		nombres = ligne.split("   ")
-		liste_gauche.append(nombres[0])
-		liste_droite.append(nombres[1])
 
 	liste_gauche.sort()
 	liste_droite.sort()
@@ -23,7 +23,18 @@ def partie1():
 
 
 def partie2():
-	pass
+	score = 0
+
+	for i in liste_gauche:
+		frequence = 0
+		for j in liste_droite:
+			if int(i) == int(j):
+				frequence += 1
+		
+		score += frequence * int(i)
+
+	print(f"La réponse de la partie 2 est {score}")
+
 
 
 if __name__ == "__main__":
