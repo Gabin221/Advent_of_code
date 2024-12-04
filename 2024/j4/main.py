@@ -27,7 +27,6 @@ def diagonales_matrice(matrice):
     compteur = 0
     lignes, colonnes = len(matrice), len(matrice[0])
 
-    # Diagonales descendantes
     for i in range(lignes - 3):
         for j in range(colonnes - 3):
             diagonale = "".join([matrice[i + k][j + k] for k in range(4)])
@@ -35,7 +34,6 @@ def diagonales_matrice(matrice):
                 if diagonale == seq:
                     compteur += 1
 
-    # Diagonales ascendantes
     for i in range(3, lignes):
         for j in range(colonnes - 3):
             diagonale = "".join([matrice[i - k][j + k] for k in range(4)])
