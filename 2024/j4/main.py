@@ -5,62 +5,81 @@ sequences = ["XMAS", "SAMX"]
 
 
 def lignes_matrice(matrice):
-    compteur = 0
-    for ligne in matrice:
-        for seq in sequences:
-            compteur += sum(1 for i in range(len(ligne) - 3) if ligne[i:i+4] == seq)
-    return compteur
+	compteur = 0
+	for ligne in matrice:
+		for seq in sequences:
+			compteur += sum(1 for i in range(len(ligne) - 3) if ligne[i:i+4] == seq)
+	return compteur
 
 
 def colonnes_matrice(matrice):
-    compteur = 0
-    lignes, colonnes = len(matrice), len(matrice[0])
+	compteur = 0
+	lignes, colonnes = len(matrice), len(matrice[0])
 
-    for j in range(colonnes):
-        colonne = [matrice[i][j] for i in range(lignes)]
-        for seq in sequences:
-            compteur += sum(1 for i in range(len(colonne) - 3) if "".join(colonne[i:i+4]) == seq)
-    return compteur
+	for j in range(colonnes):
+		colonne = [matrice[i][j] for i in range(lignes)]
+		for seq in sequences:
+			compteur += sum(1 for i in range(len(colonne) - 3) if "".join(colonne[i:i+4]) == seq)
+	return compteur
 
 
 def diagonales_matrice(matrice):
-    compteur = 0
-    lignes, colonnes = len(matrice), len(matrice[0])
+	compteur = 0
+	lignes, colonnes = len(matrice), len(matrice[0])
 
-    for i in range(lignes - 3):
-        for j in range(colonnes - 3):
-            diagonale = "".join([matrice[i + k][j + k] for k in range(4)])
-            for seq in sequences:
-                if diagonale == seq:
-                    compteur += 1
+	for i in range(lignes - 3):
+		for j in range(colonnes - 3):
+			diagonale = "".join([matrice[i + k][j + k] for k in range(4)])
+			for seq in sequences:
+				if diagonale == seq:
+					compteur += 1
 
-    for i in range(3, lignes):
-        for j in range(colonnes - 3):
-            diagonale = "".join([matrice[i - k][j + k] for k in range(4)])
-            for seq in sequences:
-                if diagonale == seq:
-                    compteur += 1
+	for i in range(3, lignes):
+		for j in range(colonnes - 3):
+			diagonale = "".join([matrice[i - k][j + k] for k in range(4)])
+			for seq in sequences:
+				if diagonale == seq:
+					compteur += 1
 
-    return compteur
+	return compteur
+
+
+def is_x(matrice):
+	compteur = 0
+	
+	for i in range(1, len(matrice) - 1):
+		for j in range(1, len(matrice[i]) - 1):
+			if matrice[i][j] == "A":
+				if matrice[i - 1][j - 1] == "M" and matrice[i + 1][j + 1] == "S" and matrice[i + 1][j - 1] == "M" and matrice[i - 1][j + 1] == "S":
+					compteur += 1
+				if matrice[i - 1][j - 1] == "M" and matrice[i + 1][j + 1] == "S" and matrice[i + 1][j - 1] == "S" and matrice[i - 1][j + 1] == "M":
+					compteur += 1
+				if matrice[i - 1][j - 1] == "S" and matrice[i + 1][j + 1] == "M" and matrice[i + 1][j - 1] == "S" and matrice[i - 1][j + 1] == "M":
+					compteur += 1
+				if matrice[i - 1][j - 1] == "S" and matrice[i + 1][j + 1] == "M" and matrice[i + 1][j - 1] == "M" and matrice[i - 1][j + 1] == "S":
+					compteur += 1
+	
+	return compteur
 
 
 def partie1():
-    answer = 0
-    matrice = [ligne for ligne in lignes]
+	answer = 0
+	matrice = [ligne for ligne in lignes]
 
-    answer += lignes_matrice(matrice)
-    answer += colonnes_matrice(matrice)
-    answer += diagonales_matrice(matrice)
+	answer += lignes_matrice(matrice)
+	answer += colonnes_matrice(matrice)
+	answer += diagonales_matrice(matrice)
 
-    print(f"La réponse de la partie 1 est {answer}")
+	print(f"La réponse de la partie 1 est {answer}")
 
 
 def partie2():
-    answer = 0
+	matrice = [ligne for ligne in lignes]
+	answer = is_x(matrice)
 
-    print(f"La réponse de la partie 2 est {answer}")
+	print(f"La réponse de la partie 2 est {answer}")
 
 
 if __name__ == "__main__":
-    partie1()
-    partie2()
+	partie1()
+	partie2()
