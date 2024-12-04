@@ -50,7 +50,8 @@ def diagonales_matrice(matrice):
 	return compteur
 
 
-def is_x(matrice):
+def nbr_x():
+	matrice = [ligne for ligne in lignes]
 	compteur = 0
 	
 	for i in range(1, len(matrice) - 1):
@@ -80,8 +81,7 @@ def partie1():
 
 
 def partie2():
-	matrice = [ligne for ligne in lignes]
-	answer = is_x(matrice)
+	answer = nbr_x()
 
 	print(f"La réponse de la partie 2 est {answer}")
 
