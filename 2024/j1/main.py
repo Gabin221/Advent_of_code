@@ -12,19 +12,19 @@ for ligne in lignes:
 
 
 def partie1():
-	dist_totale = 0
+	answer = 0
 
 	liste_gauche.sort()
 	liste_droite.sort()
 
 	for i in range(len(liste_gauche)):
-		dist_totale += abs(int(liste_gauche[i]) - int(liste_droite[i]))
+		answer += abs(int(liste_gauche[i]) - int(liste_droite[i]))
 
-	print(f"La réponse de la partie 1 est {dist_totale}")
+	print(f"La réponse de la partie 1 est {answer}")
 
 
 def partie2():
-	score = 0
+	answer = 0
 
 	for i in liste_gauche:
 		frequence = 0
@@ -32,9 +32,9 @@ def partie2():
 			if int(i) == int(j):
 				frequence += 1
 		
-		score += frequence * int(i)
+		answer += frequence * int(i)
 
-	print(f"La réponse de la partie 2 est {score}")
+	print(f"La réponse de la partie 2 est {answer}")
 
 
 if __name__ == "__main__":

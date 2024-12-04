@@ -51,7 +51,7 @@ def rapport_sur_partie2(liste):
 
 
 def partie1():
-	rapports_surs = 0
+	answer = 0
 	rapports = []
 	
 	for ligne in lignes:
@@ -63,13 +63,13 @@ def partie1():
 
 	for liste in rapports:
 		if rapport_sur_partie1(liste):
-			rapports_surs += 1
+			answer += 1
 
-	print(f"La réponse de la partie 1 est {rapports_surs}")
+	print(f"La réponse de la partie 1 est {answer}")
 
 
 def partie2():
-	rapports_surs = 0
+	answer = 0
 	rapports = []
 	
 	for ligne in lignes:
@@ -81,9 +81,9 @@ def partie2():
 
 	for liste in rapports:
 		if rapport_sur_partie2(liste):
-			rapports_surs += 1
+			answer += 1
 
-	print(f"La réponse de la partie 2 est {rapports_surs}")
+	print(f"La réponse de la partie 2 est {answer}")
 
 
 if __name__ == "__main__":
