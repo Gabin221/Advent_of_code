@@ -2,6 +2,18 @@ with open("../Input/j5.txt","r",encoding="utf8") as file :
 	lignes = [line.strip() for line in file.readlines()]
 
 
+def check_order(pages, regles):
+        for reg in regles:
+            liste = reg.split("|")
+            if liste[0] in pages and liste[1] in pages:
+                index1 = pages.index(liste[0])
+                index2 = pages.index(liste[1])
+                if index1 > index2:
+                    pages[index1], pages[index2] = pages[index2], pages[index1]
+                    check_order(pages, regles)
+        return pages
+
+
 def partie1():
 	answer = 0
 	regles = []
@@ -44,21 +56,10 @@ def partie2():
         if "," in ligne:
             mises_a_jour.append(ligne)
 
-    def check_order(pages):
-        for reg in regles:
-            liste = reg.split("|")
-            if liste[0] in pages and liste[1] in pages:
-                index1 = pages.index(liste[0])
-                index2 = pages.index(liste[1])
-                if index1 > index2:
-                    pages[index1], pages[index2] = pages[index2], pages[index1]
-                    check_order(pages)
-        return pages
-
     for mise in mises_a_jour:
         pages = mise.split(",")
         original_pages = list(pages)
-        corrected_pages = check_order(pages)
+        corrected_pages = check_order(pages, regles)
 
         if corrected_pages != original_pages:
             middle_index = len(corrected_pages) // 2
