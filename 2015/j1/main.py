@@ -9,7 +9,7 @@ def read_input(file_name: str):
         return [line.rstrip("\n") for line in f]
 
 def part1():
-    input_name = read_input("input_part1.txt")
+    input_name = read_input("input.txt")
 
     stair = 0
 
@@ -22,7 +22,7 @@ def part1():
     return stair
 
 def part2():
-    input_name = read_input("input_part2.txt")
+    input_name = read_input("input.txt")
 
     position = 0
     stair = 0

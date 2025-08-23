@@ -10,7 +10,7 @@ fun readInput(fileName: String): List<String> {
 }
 
 fun part1(): Any {
-    val inputName = readInput("input_part1.txt")[0]
+    val inputName = readInput("input.txt")[0]
 
     var stair = 0
 
@@ -27,7 +27,7 @@ fun part1(): Any {
 }
 
 fun part2(): Any {
-    val inputName = readInput("input_part2.txt")[0]
+    val inputName = readInput("input.txt")[0]
 
     var stair = 0
     var position = 0
