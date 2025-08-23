@@ -7,21 +7,21 @@ Chaque année/jour est organisé dans une arborescence claire avec des fichiers 
 
 ## Structure du projet
 
-Advent_of_code/
-├── data/ # script copier chaque jour
-│ ├── main.py
-│ └── Main.kt
-├── 2015/
-│ └── j1/ # Jour 1 - Année 2015
-│ ├── main.py
-│ ├── Main.kt
-│ ├── input_part1.txt
-│ └── input_part2.txt
-│ └── j2/ # Jour 2 - Année 2015
-│ ├── main.py
-│ ├── Main.kt
-│ ├── input_part1.txt
-│ └── input_part2.txt
+Advent_of_code/  
+├── data/ # script copier chaque jour  
+│ ├── main.py  
+│ └── Main.kt  
+├── 2015/  
+│ └── j1/ # Jour 1 - Année 2015  
+│ ├── main.py  
+│ ├── Main.kt  
+│ ├── input_part1.txt  
+│ └── input_part2.txt  
+│ └── j2/ # Jour 2 - Année 2015  
+│ ├── main.py  
+│ ├── Main.kt  
+│ ├── input_part1.txt  
+│ └── input_part2.txt  
 
 ## Utilisation
 
