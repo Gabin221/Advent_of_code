@@ -2,7 +2,6 @@ package aoc
 
 import java.nio.file.Files
 import java.nio.file.Path
-import biblio.readInput
 import java.nio.file.Paths
 
 fun readInput(fileName: String): List<String> {
@@ -11,16 +10,14 @@ fun readInput(fileName: String): List<String> {
 }
 
 fun part1(): Any {
-    // TODO: logique partie 1
-    val inputName = "input_part1.txt"
-    val lines = readInput(inputName)
+    val inputName = readInput("input_part1.txt")
+
     return 0
 }
 
 fun part2(): Any {
-    // TODO: logique partie 2
-    val inputName = "input_part2.txt"
-    val lines = readInput(inputName)
+    val inputName = readInput("input_part2.txt")
+
     return 0
 }
 
