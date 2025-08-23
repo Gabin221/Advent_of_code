@@ -11,12 +11,32 @@ def read_input(file_name: str):
 def part1():
     input_name = read_input("input_part1.txt")
 
-    return 0
+    stair = 0
+
+    for i in input_name[0]:
+        if i == "(":
+            stair += 1
+        if i == ")":
+            stair -=1
+
+    return stair
 
 def part2():
     input_name = read_input("input_part2.txt")
 
-    return 0
+    position = 0
+    stair = 0
+
+    for i in input_name[0]:
+        position += 1
+        if i == "(":
+            stair += 1
+        if i == ")":
+            stair -=1
+
+        if stair == -1:
+            return position
+
 
 def main():
     print(f"Part 1: {part1()}")
