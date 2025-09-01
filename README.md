@@ -1,7 +1,7 @@
 # Advent-of-code
 
-Ce dépôt contient mes solutions aux différents **Advent of Code**, implémentées en **Python**, **C++** et **Kotlin**.  
-Chaque année/jour est organisé dans une arborescence claire avec des fichiers d’entrée (`input_part1.txt`, `input_part2.txt`) et un squelette de code identique dans chaque langage.
+Ce dépôt contient mes solutions aux différents **Advent of Code**, implémentées en **Python** et **Kotlin**.  
+Chaque année/jour est organisé dans une arborescence claire avec des fichiers d’entrée (`input.txt`) et un squelette de code identique dans chaque langage.
 
 ---
 
@@ -15,13 +15,11 @@ Advent_of_code/
 │ └── j1/ # Jour 1 - Année 2015  
 │ ├── main.py  
 │ ├── Main.kt  
-│ ├── input_part1.txt  
-│ └── input_part2.txt  
+│ ├── input.txt  
 │ └── j2/ # Jour 2 - Année 2015  
 │ ├── main.py  
 │ ├── Main.kt  
-│ ├── input_part1.txt  
-│ └── input_part2.txt  
+│ ├── input.txt  
 
 ## Utilisation
 
