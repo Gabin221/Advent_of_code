@@ -10,13 +10,13 @@ fun readInput(fileName: String): List<String> {
 }
 
 fun part1(): Any {
-    val inputName = readInput("input_part1.txt")
+    val inputName = readInput("input.txt")
 
     return 0
 }
 
 fun part2(): Any {
-    val inputName = readInput("input_part2.txt")
+    val inputName = readInput("input.txt")
 
     return 0
 }
